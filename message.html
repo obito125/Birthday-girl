@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Special Message</title>
+
+<link rel="stylesheet"
+href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+```
+
+</head>
+
+<body>
+
+```
+<!-- PARTICLES -->
+
+<div class="particles"></div>
+
+<!-- CURSOR -->
+
+<div class="cursor"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        💌 Special Message
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="gallery.html">
+                Gallery
+            </a>
+        </li>
+
+        <li>
+            <a href="fun.html">
+                Fun Zone
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="message-hero">
+
+    <h1 class="message-title">
+
+        HAVE THE MOST AMAZING YEAR ✨
+
+    </h1>
+
+    <p class="message-subtitle">
+
+        This little digital surprise was created
+        specially to make your birthday
+        feel more colorful, fun, and memorable 🎀
+
+    </p>
+
+</section>
+
+<!-- MESSAGE CARDS -->
+
+<section class="message-cards">
+
+    <div class="message-card">
+
+        <h2>
+            🌸 Stay Happy
+        </h2>
+
+        <p>
+
+            Keep smiling, enjoying life,
+            and making unforgettable memories.
+            Happiness looks good on you ✨
+
+        </p>
+
+    </div>
+
+    <div class="message-card">
+
+        <h2>
+            🚀 Keep Growing
+        </h2>
+
+        <p>
+
+            May this year bring new opportunities,
+            exciting adventures,
+            and lots of success.
+
+        </p>
+
+    </div>
+
+    <div class="message-card">
+
+        <h2>
+            🎉 Enjoy Your Day
+        </h2>
+
+        <p>
+
+            Today is your special day,
+            so enjoy every second,
+            laugh loudly,
+            and eat lots of cake 🍰
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- TYPING SECTION -->
+
+<section class="typing-section">
+
+    <h1 id="typingText"></h1>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="timeline-section">
+
+    <h1 class="timeline-title">
+
+        ✨ Birthday Timeline ✨
+
+    </h1>
+
+    <div class="timeline">
+
+        <div class="timeline-box">
+
+            <h2>
+                🌈 Morning
+            </h2>
+
+            <p>
+                Start the day with positivity
+                and lots of smiles.
+            </p>
+
+        </div>
+
+        <div class="timeline-box">
+
+            <h2>
+                🎂 Afternoon
+            </h2>
+
+            <p>
+                Cake time, fun time,
+                and celebration mode activated.
+            </p>
+
+        </div>
+
+        <div class="timeline-box">
+
+            <h2>
+                🌙 Night
+            </h2>
+
+            <p>
+                End the day with beautiful memories
+                and happiness.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUOTE SECTION -->
+
+<section class="quote-big">
+
+    <h1>
+
+        “Make This Year Beautiful ✨”
+
+    </h1>
+
+</section>
+
+<!-- FINAL MESSAGE -->
+
+<section class="final-message">
+
+    <div class="final-box">
+
+        <h1>
+
+            🎀 One Last Message 🎀
+
+        </h1>
+
+        <p>
+
+            Wishing you happiness,
+            positivity,
+            peace,
+            fun,
+            success,
+            and unforgettable memories ahead.
+
+        </p>
+
+        <p>
+
+            Keep shining,
+            keep smiling,
+            and keep being amazing ✨
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SCRIPT -->
+
+<script src="script.js"></script>
+
+<script>
+
+    const text =
+    "✨ Hope your birthday becomes one of the happiest and most unforgettable days ever ✨";
+
+    let i = 0;
+
+    function typingEffect(){
+
+        if(i < text.length){
+
+            document.getElementById("typingText")
+            .innerHTML += text.charAt(i);
+
+            i++;
+
+            setTimeout(typingEffect,50);
+        }
+    }
+
+    typingEffect();
+
+</script>
+
+<div class="floating-hearts">
+
+```
+<span>💖</span>
+<span>✨</span>
+<span>🌸</span>
+<span>🦋</span>
+<span>🎀</span>
+<span>💫</span>
+```
+
+</div>
+
+
+</body>
+
+</html>

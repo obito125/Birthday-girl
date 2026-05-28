@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Fun Zone</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        🎮 Fun Zone
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <h1 class="main-title">
+            RANDOM FUN ✨
+        </h1>
+
+        <p id="funText">
+            Click below for random positivity.
+        </p>
+
+        <button onclick="generateFun()">
+            GENERATE
+        </button>
+
+    </div>
+
+</section>
+
+<!-- BALLOON POP GAME -->
+
+<section class="birthday-game">
+
+    <h1 class="quiz-title">
+        🎈 Pop The Balloons
+    </h1>
+
+    <p>
+        Pop balloons to increase score!
+    </p>
+
+    <h2 id="balloonScore">
+        Balloons Popped : 0
+    </h2>
+
+    <div id="balloon-container">
+
+    </div>
+
+</section>
+
+
+<!-- FIND THE GIFT -->
+
+<section class="birthday-game">
+
+    <h1 class="quiz-title">
+        🎁 Find The Gift
+    </h1>
+
+    <p>
+        One box contains the gift.
+    </p>
+
+    <div class="gift-boxes">
+
+        <button onclick="checkGift(1)">
+            🎀 Box 1
+        </button>
+
+        <button onclick="checkGift(2)">
+            🎀 Box 2
+        </button>
+
+        <button onclick="checkGift(3)">
+            🎀 Box 3
+        </button>
+
+    </div>
+
+    <h2 id="giftResult">
+        Choose a box ✨
+    </h2>
+
+</section>
+
+<!-- CATCH THE CAKE GAME -->
+
+<section class="birthday-game">
+
+    <h1 class="quiz-title">
+        🍰 Catch The Cake
+    </h1>
+
+    <p>
+        Catch the cakes before they fall!
+    </p>
+
+    <h2 id="cakeScore">
+        Score : 0
+    </h2>
+
+    <div id="gameArea">
+
+        <div id="basket">
+            🧺
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+// ======================================
+// RANDOM FUN GENERATOR
+// ======================================
+
+function generateFun(){
+
+    const data = [
+
+        "🎉 Happiness Increased",
+
+        "🌸 Smile Mode Activated",
+
+        "✨ Positive Energy Loaded",
+
+        "🎀 Birthday Vibes Detected",
+
+        "💖 Main Character Energy",
+
+        "🍰 Cake Energy Activated",
+
+        "🎈 Celebration Level MAX"
+    ];
+
+    let random =
+    data[Math.floor(Math.random()*data.length)];
+
+    document.getElementById("funText")
+    .innerHTML = random;
+}
+
+// ======================================
+// BALLOON POP GAME
+// ======================================
+
+let balloonScore = 0;
+
+const balloonContainer =
+document.getElementById("balloon-container");
+
+function createBalloon(){
+
+    const balloon =
+    document.createElement("div");
+
+    balloon.classList.add("balloon");
+
+    balloon.innerHTML = "🎈";
+
+    balloon.style.left =
+    Math.random() * 90 + "%";
+
+    balloon.style.top = "100%";
+
+    balloon.onclick = ()=>{
+
+        balloon.remove();
+
+        balloonScore++;
+
+        document.getElementById("balloonScore")
+        .innerHTML =
+        "Balloons Popped : " + balloonScore;
+    };
+
+    balloonContainer.appendChild(balloon);
+
+    setTimeout(()=>{
+
+        balloon.remove();
+
+    },6000);
+}
+
+setInterval(createBalloon,1000);
+
+// ======================================
+// FIND THE GIFT GAME
+// ======================================
+
+let winningBox =
+Math.floor(Math.random()*3)+1;
+
+function checkGift(box){
+
+    const result =
+    document.getElementById("giftResult");
+
+    if(box === winningBox){
+
+        result.innerHTML =
+        "🎉 You found the birthday gift!";
+
+        result.style.color = "#22c55e";
+
+        winningBox =
+        Math.floor(Math.random()*3)+1;
+    }
+
+    else{
+
+        result.innerHTML =
+        "😅 Wrong box! Try again.";
+
+        result.style.color = "#ef4444";
+    }
+}
+
+// ======================================
+// CATCH THE CAKE GAME
+// ======================================
+
+let cakeScore = 0;
+
+const gameArea =
+document.getElementById("gameArea");
+
+const basket =
+document.getElementById("basket");
+
+// MOVE BASKET
+
+gameArea.addEventListener("mousemove",(e)=>{
+
+    const rect =
+    gameArea.getBoundingClientRect();
+
+    let x =
+    e.clientX - rect.left;
+
+    if(x < 40){
+        x = 40;
+    }
+
+    if(x > rect.width - 40){
+        x = rect.width - 40;
+    }
+
+    basket.style.left = x + "px";
+});
+
+// MOBILE TOUCH SUPPORT
+
+gameArea.addEventListener("touchmove",(e)=>{
+
+    const rect =
+    gameArea.getBoundingClientRect();
+
+    let x =
+    e.touches[0].clientX - rect.left;
+
+    basket.style.left = x + "px";
+
+});
+
+// CREATE CAKES
+
+function createCake(){
+
+    const cake =
+    document.createElement("div");
+
+    cake.classList.add("cake");
+
+    cake.innerHTML = "🍰";
+
+    cake.style.left =
+    Math.random() * 85 + "%";
+
+    gameArea.appendChild(cake);
+
+    let fall = 0;
+
+    const fallInterval =
+    setInterval(()=>{
+
+        fall += 5;
+
+        cake.style.top =
+        fall + "px";
+
+        const basketRect =
+        basket.getBoundingClientRect();
+
+        const cakeRect =
+        cake.getBoundingClientRect();
+
+        // COLLISION
+
+        if(
+
+            cakeRect.bottom >= basketRect.top &&
+
+            cakeRect.left <= basketRect.right &&
+
+            cakeRect.right >= basketRect.left
+
+        ){
+
+            cake.remove();
+
+            clearInterval(fallInterval);
+
+            cakeScore++;
+
+            document.getElementById("cakeScore")
+            .innerHTML =
+            "Score : " + cakeScore;
+        }
+
+        // REMOVE IF MISSED
+
+        if(fall > 500){
+
+            cake.remove();
+
+            clearInterval(fallInterval);
+        }
+
+    },30);
+}
+
+setInterval(createCake,1400);
+
+// ======================================
+// SECRET EFFECT
+// ======================================
+
+document.addEventListener("dblclick",()=>{
+
+    document.body.style.background =
+    "linear-gradient(135deg,#ff6ec7,#a855f7,#60a5fa)";
+
+});
+
+</script>
+
+</body>
+
+</html>

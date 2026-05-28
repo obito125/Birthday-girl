@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Surprise</title>
+
+<!-- CSS -->
+
+<link rel="stylesheet"
+href="style.css">
+
+<!-- GOOGLE FONT -->
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+```
+
+</head>
+
+<body>
+
+```
+<!-- LOADER -->
+
+<div id="loader">
+
+    <div class="loader-content">
+
+        <h1>✨ Loading Surprise ✨</h1>
+
+        <div class="loader-bar">
+
+            <div class="loader-fill"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PARTICLES -->
+
+<div class="particles"></div>
+
+<!-- CURSOR -->
+
+<div class="cursor"></div>
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        🎀 Birthday Girl
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="gallery.html">
+                Gallery
+            </a>
+        </li>
+
+        <li>
+            <a href="fun.html">
+                Fun Zone
+            </a>
+        </li>
+
+        <li>
+            <a href="message.html">
+                Message
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <div class="hero-left">
+
+        <h1 class="main-title">
+
+            HAPPY <br>
+
+            BIRTHDAY <br>
+
+            SHRUTHI ✨
+
+        </h1>
+
+        <p>
+
+            A colorful little digital experience
+            specially made to make your day
+            more fun and memorable 🎉
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="gallery.html">
+
+                <button>
+                    OPEN GALLERY
+                </button>
+
+            </a>
+
+            <a href="fun.html">
+
+                <button class="pink-btn">
+                    FUN ZONE
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="floating-card">
+
+            <img src="img-6.png"
+            alt="Birthday Image">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INFO CARDS -->
+
+<section class="cards-section">
+
+    <div class="info-card">
+
+        <h2>
+            🌸 Positive Vibes
+        </h2>
+
+        <p>
+
+            May your year be filled
+            with happiness, peace,
+            fun, and success.
+
+        </p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h2>
+            🎉 Special Day
+        </h2>
+
+        <p>
+
+            Today is all about
+            enjoying, smiling,
+            and celebrating yourself.
+
+        </p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h2>
+            ✨ Main Character Energy
+        </h2>
+
+        <p>
+
+            Another legendary level
+            unlocked successfully.
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- QUOTES -->
+
+<section class="quote-section">
+
+    <h1 id="quoteText">
+
+        “Shine Bright Like You Always Do ✨”
+
+    </h1>
+
+    <button onclick="changeQuote()">
+
+        NEXT QUOTE
+
+    </button>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats-section">
+
+    <div class="stat-box">
+
+        <h2>
+            HAPPINESS
+        </h2>
+
+        <div class="bar">
+
+            <div class="fill fill1"></div>
+
+        </div>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2>
+            FUN LEVEL
+        </h2>
+
+        <div class="bar">
+
+            <div class="fill fill2"></div>
+
+        </div>
+
+    </div>
+
+    <div class="stat-box">
+
+        <h2>
+            AWESOMENESS
+        </h2>
+
+        <div class="bar">
+
+            <div class="fill fill3"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECRET MODE -->
+
+<section class="secret-section">
+
+    <button id="secretBtn">
+
+        🔒 OPEN SECRET MODE
+
+    </button>
+
+</section>
+
+<!-- PASSWORD POPUP -->
+
+<div id="passwordPopup">
+
+    <div class="popup-box">
+
+        <h1>
+            🎀 Secret Access
+        </h1>
+
+        <input
+        type="password"
+        id="passwordInput"
+        placeholder="Enter Password">
+
+        <button onclick="checkPassword()">
+
+            UNLOCK ✨
+
+        </button>
+
+        <p id="errorText"></p>
+
+    </div>
+
+</div>
+
+<!-- SECRET IMAGE -->
+
+<div id="secretImageBox">
+
+    <img src="img-7.png"
+    alt="Secret Image">
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+```
+
+</body>
+
+</html>
